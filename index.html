@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antonio Websites — Review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 2rem 1rem 4rem;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+  p.sub {
+    text-align: center;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .card {
+    display: block;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+  }
+  .card h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.5rem;
+    word-break: break-word;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    margin: 0 0.3rem 0.3rem 0;
+  }
+  .badge-unfinished {
+    background: #fff3cd;
+    color: #7a5c00;
+    border: 1px solid #e6c25c;
+  }
+  .badge-flash {
+    background: #e6f0ff;
+    color: #1a4b8c;
+    border: 1px solid #9dbbe6;
+  }
+  .badge-priority {
+    background: #e6ffed;
+    color: #1a6b2f;
+    border: 1px solid #7fcf99;
+  }
+  .badge-bonus {
+    background: #f0e6ff;
+    color: #5a2c9c;
+    border: 1px solid #c9a8f0;
+  }
+  .note {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.4rem;
+  }
+  footer {
+    text-align: center;
+    color: #999;
+    font-size: 0.8rem;
+    margin-top: 3rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Antonio Websites — Static Review</h1>
+<p class="sub">Frozen static snapshots of each site for review. Forms, search, and admin login are visually present but non-functional.</p>
+
+<div class="grid">
+
+  <a class="card" href="assoconsorzi-impex.net/index.html">
+    <h2>assoconsorzi-impex.net</h2>
+  </a>
+
+  <a class="card" href="new-smart-city-procurement.org/index.html">
+    <h2>new-smart-city-procurement.org</h2>
+    <span class="badge badge-unfinished">Unfinished — template only</span>
+    <div class="note">Namira template clone, never customized.</div>
+  </a>
+
+  <a class="card" href="inter-freezone.website/home.html">
+    <h2>inter-freezone.website</h2>
+    <span class="badge badge-flash">Legacy Flash (non-functional)</span>
+    <div class="note">Top nav uses Flash; sidebar menu is the working alternative.</div>
+  </a>
+
+  <a class="card" href="inter-procurement-consortiums.website/index.html">
+    <h2>inter-procurement-consortiums.website</h2>
+    <div class="note">Includes a nested WordPress install under <code>proposte-temi/</code> (files only — no content database exists for it).</div>
+  </a>
+
+  <a class="card" href="pool-lawyers.pro/index.html">
+    <h2>pool-lawyers.pro</h2>
+    <span class="badge badge-unfinished">Unfinished — template only</span>
+    <div class="note">Bare default WordPress install, no real content was ever added.</div>
+  </a>
+
+  <a class="card" href="avvocato-rositadilorenzo.pool-lawyers.pro/index.html">
+    <h2>avvocato-rositadilorenzo.pool-lawyers.pro</h2>
+    <span class="badge badge-priority">Priority reference site</span>
+  </a>
+
+  <a class="card" href="promo-urbana-torvergata.org/index.html">
+    <h2>promo-urbana-torvergata.org</h2>
+    <span class="badge badge-unfinished">Unfinished — template only</span>
+    <div class="note">Partial variant of the Rosita template site.</div>
+  </a>
+
+  <a class="card" href="interprocurement.assoconsorziimpex.net/index.html">
+    <h2>interprocurement.assoconsorziimpex.net</h2>
+    <span class="badge badge-bonus">Bonus / subdomain</span>
+  </a>
+
+</div>
+
+<footer>Static snapshot for internal review — not the live sites.</footer>
+
+</body>
+</html>

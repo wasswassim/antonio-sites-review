@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Inter Procurement Consortium</title>
+<link href="css/style-reserved.css" rel="stylesheet" type="text/css">
+<style>
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-item {
+  background: purple;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 15px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+</style>
+<meta name="description" content="Reserved Area Secure procurement">
+<meta name="keywords" content="Homepage, Import, Export, 3DPTY">
+<meta name="author" content="Digimaw">
+</head>
+<body>
+<div class="contenitore">
+   
+  <div class="menumain">
+	<ul>
+		<img src="images/Logo-IM.jpg" width="8%" height="8%" style="vertical-align:middle">
+		<li><a href="index.html">Homepage</a></li>
+		<li><a href="https://assoconsorzi-impex.net/">About Us</a></li>
+		<li><a href="INTERPROCUREMENT/index.html">Secure Procurement</a></li>
+		<li><a href="https://assoconsorzi-impex.net/spec-proj/">Special Projects</a></li>
+		<li><a href="INTERPROCUREMENT/forms/info-form.htm">Contact Us</a></li>
+		<li><a href="reserved.html" id="evidenziato">Reserved Areas</a></li>
+	</ul>
+	
+  </div>
+<div align="center"><img src="images/sportello-testata.jpg" width="90%" height="137"></div>
+<ul class="flex-container">
+  <li class="flex-item"><a href="#" style="color:white">Importer Reserved Area</a></li>
+  <li class="flex-item"><a href="#" style="color:white">Exporter</a></li>
+  <li class="flex-item"><a href="#" style="color:white">Inter-Broker</a></li>
+ </ul>
+ <ul class="flex-container">
+  <li class="flex-item"><a href="#" style="color:white">Become an Agent</a></li>
+  <li class="flex-item"><a href="#" style="color:white">Coop-Support</a></li>
+  <li class="flex-item"><a href="stafflogon.html" style="color:white">Staff</a></li>
+</ul>
+</div>
+</body>
+</html>

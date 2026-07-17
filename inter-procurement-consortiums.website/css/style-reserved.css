@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html, body {
+  height:100%;
+  margin:0;
+  
+}
+.contenitore{
+  height:100%
+}
+.videofullscreen{
+  position:absolute;
+  top:2%;
+  overflow: hidden;
+  width:100% !important;
+  height:100% !important;
+  object-fit: cover;
+  z-index: -100;
+}
+.titolo{
+  position: absolute;
+  color:#FFFFFF;
+  top: 55%; left: 50%;
+  transform: translate(-50%,-50%);
+  border:10px solid;
+  border-radius: 25px;
+  padding:20px;
+}
+.titolino{
+	font-family: 'Open Sans', serif;
+	color: #fff
+}
+.contenuto{
+	height:88%;
+	width:100%;
+	background:#110078;
+	
+}
+.menumain{
+	color:#ffffff;
+	top:1%; 
+	background:#EFE5E3;
+	font-family: 'Open Sans', serif;
+}
+.menumain li
+{
+display: inline;
+margin: 0;
+padding: 8;
+list-style-type: none;
+}
+.menumain a:link, .menumain a:visited
+{
+font-weight: bold;
+margin:0 1em;
+text-decoration: none;
+color: #000;
+}
+.menumain a:link#evidenziato, .menumain a:visited#evidenziato, .menumain a:hover
+{
+border-top: 2px solid #c00;
+color: #c00;
+}
+
+h1 {
+  font-family: 'Open Sans', serif;
+  font-size:90px;
+}
+table {
+  width: 100%;
+}
+td {
+  text-align: center;
+  color:#fff;
+}

@@ -1,0 +1,10 @@
+*.sql
+id_rsa
+id_rsa.*
+wp-config.php
+*.zip
+*.tgz
+*.env
+.env
+*.pem
+*.key
