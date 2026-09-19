@@ -1,0 +1,517 @@
+<%@ Language=JavaScript%>
+<!--#include file ="IIS_Gen_3.0_ConnectionPool.js"-->
+<!--#include file ="IIS_Gen_3.0_Recordset.js"-->
+<%
+var Lingua;
+Lingua = (Request.Cookies("Utente")("Lingua"));
+	var Url = Request.Querystring;
+//	AUrl = split(Url, "'",-1);
+//	for (a = 0;ubound(AUrl);a++){
+//		response.Write(Url);
+//	}
+//	DirUtente = ubound(AUrl) - 1
+codice = request.query
+response.write(codice)
+%>
+
+<%
+/* Connection Pooler */
+var ConnectionCache = new ConnectionCache()
+/* server-side recordset */
+var Recordset4 = new Recordset("Recordset4", "odbcinterfreezone", "", "", "SELECT Lingua,  CI_msg01,  CI_msg02,  CI_msg03,  CI_msg04,  CI_msg05,  CI_msg06,  CI_msg07,  CI_msg08,  CI_msg09,  CI_msg10,  CI_msg11,  CI_msg12,  CI_msg13,  CI_msg14,  CI_msg15,  CI_msg16,  CI_msg17 FROM Lingue where codice=1 ", "Lingua", false, 2, 3, 3, "");
+if (Lingua == "Italiano") 
+{
+var Recordset4 = new Recordset("Recordset4", "odbcinterfreezone", "", "", "SELECT Lingua,  CI_msg01,  CI_msg02,  CI_msg03,  CI_msg04,  CI_msg05,  CI_msg06,  CI_msg07,  CI_msg08,  CI_msg09,  CI_msg10,  CI_msg11,  CI_msg12,  CI_msg13,  CI_msg14,  CI_msg15,  CI_msg16,  CI_msg17 FROM Linguae where codice=1 ", "Lingua", false, 2, 3, 3, "");
+}
+if (Lingua == "English") 
+{
+var Recordset4 = new Recordset("Recordset4", "odbcinterfreezone", "", "", "SELECT Lingua,  CI_msg01,  CI_msg02,  CI_msg03,  CI_msg04,  CI_msg05,  CI_msg06,  CI_msg07,  CI_msg08,  CI_msg09,  CI_msg10,  CI_msg11,  CI_msg12,  CI_msg13,  CI_msg14,  CI_msg15,  CI_msg16,  CI_msg17 FROM Linguae where codice=2 ", "Lingua", false, 2, 3, 3, "");
+}
+if (Lingua == "Espanol") 
+{
+var Recordset4 = new Recordset("Recordset4", "odbcinterfreezone", "", "", "SELECT Lingua,  CI_msg01,  CI_msg02,  CI_msg03,  CI_msg04,  CI_msg05,  CI_msg06,  CI_msg07,  CI_msg08,  CI_msg09,  CI_msg10,  CI_msg11,  CI_msg12,  CI_msg13,  CI_msg14,  CI_msg15,  CI_msg16,  CI_msg17 FROM Linguae where codice=3 ", "Lingua", false, 2, 3, 3, "");
+}
+Recordset4.Open();
+Recordset4.ProcessAction();
+Recordset4.SetMessages("No more records","No records found");
+
+var Recordset1 = new Recordset("Recordset1", "odbcinterfreezone", "", "", "SELECT RagioneSociale.Codice,  RagioneSociale.Cod_clie,  RagioneSociale.RagioneSociale,  RagioneSociale.Indirizzo,  RagioneSociale.Cap,  RagioneSociale.Citta,  RagioneSociale.Provincia,  RagioneSociale.Regione,  RagioneSociale.Nazione,  RagioneSociale.Email,  RagioneSociale.Telefono,  RagioneSociale.Fax,  RagioneSociale.Certificata,  RagioneSociale.Descrizione,  RagioneSociale.CenniStorici,  RagioneSociale.CenniStoriciE,  RagioneSociale.DescrizioneE,  RagioneSociale.Logo,  RagioneSociale.ProdottoI1,  RagioneSociale.ProdottoI2,  RagioneSociale.Prodottos1,  RagioneSociale.Prodottos2,  RagioneSociale.Immagine1,  RagioneSociale.Immagine2,  RagioneSociale.IDCategoria,  RagioneSociale.IDSottoCategoria, RagioneSociale.Cli_C7 FROM RagioneSociale", "Codice", false, 2, 3, 3, "");
+Recordset1_BeforeOpen();
+Recordset1.Open();
+Recordset1.ProcessAction();
+Recordset1.SetMessages("Fine Archivio","Non Trovato");
+
+%>
+<%
+function Recordset1_BeforeOpen() {
+if (String(Request("Recordset1_First")) != "undefined") 
+{
+    Recordset1.SetAction("First");
+}
+if (String(Request("Recordset1_Prev")) != "undefined") 
+{
+    Recordset1.SetAction("Previous");
+}
+if (String(Request("Recordset1_Next")) != "undefined") 
+{
+    Recordset1.SetAction("Next");
+}
+if (String(Request("Recordset1_Last")) != "undefined")
+{
+    Recordset1.SetAction("Last");
+}
+}
+%>
+
+
+
+<head>
+
+
+
+<META NAME="GENERATOR" CONTENT="Microsoft FrontPage 5.0">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+
+<TITLE>LETTER OF INVITATION</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var Form1 = null;
+var Recordset1_First = null;
+var Recordset1_Prev = null;
+var Recordset1_Next = null;
+var Recordset1_Last = null;
+var Recordset1_Label_Codice = null;
+var Recordset1_Codice = null;
+var Recordset1_Label_Cod_clie = null;
+var Recordset1_Cod_clie = null;
+var Recordset1_Label_RagioneSociale = null;
+var Recordset1_RagioneSociale = null;
+var Recordset1_Label_Indirizzo = null;
+var Recordset1_Indirizzo = null;
+var Recordset1_Label_Cap = null;
+var Recordset1_Cap = null;
+var Recordset1_Label_Citta = null;
+var Recordset1_Citta = null;
+var Recordset1_Label_Provincia = null;
+var Recordset1_Provincia = null;
+var Recordset1_Label_Regione = null;
+var Recordset1_Regione = null;
+var Recordset1_Label_Nazione = null;
+var Recordset1_Nazione = null;
+var Recordset1_Label_Email = null;
+var Recordset1_Email = null;
+var Recordset1_Label_Telefono = null;
+var Recordset1_Telefono = null;
+var Recordset1_Label_Fax = null;
+var Recordset1_Fax = null;
+var Recordset1_Label_Certificata = null;
+var Recordset1_Certificata = null;
+var Recordset1_Label_Descrizione = null;
+var Recordset1_Descrizione = null;
+var Recordset1_Label_CenniStorici = null;
+var Recordset1_CenniStorici = null;
+var Recordset1_Label_DescrizioneProduzione = null;
+var Recordset1_DescrizioneProduzione = null;
+var Recordset1_Label_Logo = null;
+var Recordset1_Logo = null;
+var Recordset1_Label_ProdottoI1 = null;
+var Recordset1_ProdottoI1 = null;
+var Recordset1_Label_ProdottoI2 = null;
+var Recordset1_ProdottoI2 = null;
+var Recordset1_Label_Immagine1 = null;
+var Recordset1_Immagine1 = null;
+var Recordset1_Label_Immagine2 = null;
+var Recordset1_Immagine2 = null;
+var Recordset1_Label_IDCategoria = null;
+var Recordset1_IDCategoria = null;
+var Recordset1_Label_IDSottoCategoria = null;
+var Recordset1_IDSottoCategoria = null;
+//-->
+</SCRIPT>
+<SCRIPT SRC="media/DBCommon.js"></SCRIPT>
+<SCRIPT SRC="media/DBFrmBtn.js"></SCRIPT>
+<SCRIPT SRC="media/Client_Gen_3.0_Recordset.js"></SCRIPT>
+<SCRIPT SRC="media/DBForm.js"></SCRIPT>
+
+<SCRIPT SRC="media/DBRelPos.js"></SCRIPT>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<style type="text/css">
+<!--
+.style1 {	color: #000066;
+	font-weight: bold;
+}
+-->
+</style>
+<head>
+<title>AFFILIAZIONE INTERNAZIONALE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<SCRIPT language=JavaScript1.1>
+<!--
+
+<!-- form validation script
+function isReady(form) {
+        if (parseInt(navigator.appVersion) == 3) return true;
+        
+		var counter = 0
+		if (form.ID_Name.value != "") counter ++;
+        if (form.ID_Company.value != "") counter ++;
+        if (form.ID_Phone.value != "") counter ++;
+        if (form.ID_Title.value != "") counter ++;
+		if (form.ID_State.value != "") counter ++;
+		if (form.sender.value != "") counter ++;
+        if (counter != 6) {
+                alert("Please make sure you have filled in all required fields.");
+                form.ID_Company.focus();
+                return false;
+                }
+         else {
+		    if ((form.SUR_Contact_By_Phone[0].checked || form.SUR_Contact_By_Phone[1].checked)&& (form.SUR_Contact_By_Email[0].checked || form.SUR_Contact_By_Email[1].checked)) {
+				
+				if ((form.SUR_Where_Heard.options[form.SUR_Where_Heard.selectedIndex].value=="boo") || (form.SUR_Company_Size.options[form.SUR_Company_Size.selectedIndex].value=="boo")){
+				   alert("Please select where you heard of us.")
+				   return false;
+				} else {
+				   return true;
+				}
+				
+			} else {
+    			alert("Please select an option to be contacted by phone or e-mail.");
+				return false;
+			}
+		  return true;
+        }       
+  }
+// -->
+//-->
+</SCRIPT>
+<style type="text/css">
+<!--
+.Stile4 {	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #ff0000
+}
+.Stile8 {font-size: 16px}
+.Stile9 {font-size: 10px}
+.Stile10 {font-size: 10pt}
+.Stile11 {color: #000066}
+.Stile13 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+}
+.Stile98 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14pt;
+}
+.Stile99 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	font-size: 8pt;
+}
+.Stile101 {	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	font-weight: bold;
+}
+.style10 {font-family: Arial, Helvetica, sans-serif; color: #000066; font-weight: bold; font-size: 12px; }
+.style15 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 14px; }
+.style16 {
+	color: #000033;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.style26 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFF00;
+	font-weight: bold;
+}
+.style31 {font-size: 12px}
+.Stile131 {font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+.style18 {font-family: Arial, Helvetica, sans-serif; color: #000066; font-weight: bold; font-size: 18px; }
+.style23 {	font-size: 8pt;
+	text-decoration: none;
+	color: #000066;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.Stile1 {	color: #FF0000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style37 {font-family: Arial, Helvetica, sans-serif}
+.style38 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.style41 {font-size: 12px; font-weight: bold; }
+.fx7 {	font-size: 8pt;
+	text-decoration: none;
+	color: #000066;
+}
+.style43 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000066;
+}
+.titolo {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000066;
+}
+.style47 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	font-style: italic;
+}
+.style49 {font-family: Arial, Helvetica, sans-serif; color: #000066; font-weight: bold; font-size: 12px; font-style: italic; }
+.style50 {color: #FFFF00}
+.style59 {color: #000033; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif;}
+.style61 {font-family: Verdana, Arial, Helvetica, sans-serif; color: #000033;}
+-->
+</style>
+</head>
+<body onLoad="text('  W e l c o m e   t o   E U R O P A R K ');" bgcolor="#000033" link="#000066" vlink="#000066" alink="#FFFF00" text="#ECE4BD" topmargin="0" rightmargin="0">
+
+<div align="center">
+  <table width="700" border="8">
+    <tr> 
+      <td bgcolor="#FFFF99" valign="top">               
+			  <table width="100%" border="2" cellpadding="5" cellspacing="5">
+                <tr bgcolor="#72060B">
+                  <td colspan="5" bgcolor="#000066"><div align="center" class="Stile53">
+                    <table width="100%"  border="8">
+                      <tr>
+                        <td><div align="center">
+                            <table width="100%" border="0" cellpadding="0">
+                              <tr>
+                                <td bgcolor="#000066"><div align="center">
+                                    <DIV align="center" class="Stile98">I N D E X &nbsp; O F F E R T A&nbsp;&nbsp; E X P O R T   "DECERTOFFEX"</DIV>
+                                </div></td>
+                              </tr>
+                              <tr>
+                                <td><div align="center" class="style15 style31">
+                                  <p align="center" class="style31">Foreign Country's Delegation Network-Europa-America-Asia-Australia-Africa</p>
+                                </div></td>
+                              </tr>
+                          </table>
+                        </div></td>
+                      </tr>
+                    </table>
+                  </div></td>
+                </tr>
+                
+                
+				
+				               
+                <tr bgcolor="#99FFFF">
+                  <td colspan="5" align="center" bgcolor="#666666" class="Stile27">
+                      <table width="100%"  border="0" cellspacing="10">
+                        <tr>
+                          <td><table width="100%" border="5">
+                            <tr>
+                              <td><table width="100%" border="0">
+                                  <tr>
+                                    <td><div align="center"><img src="http://www.interfreezone.org/db/sitoexporter/pages/img/CASAFORTE.jpg" width="120" height="90"></div></td>
+                                    <td bgcolor="#FFFF00" width="350"><table width="100%" border="0" cellspacing="6">
+                                        <tr>
+                                          <td><div align="center" class="Stile8"><span class="style59">IEMAS Inter-Markets-Associates</span></div></td>
+                                        </tr>
+                                        <tr>
+                                          <td bgcolor="#FFFF99"><div align="center">
+                                              <table width="100%" border="4">
+                                                <tr>
+                                                  <td bgcolor="#000066"><div align="center"><span class="style26">Inter-Markets-Export-Import-Consortiums-Associates-Network</span></div></td>
+                                                </tr>
+                                              </table>
+                                          </div></td>
+                                        </tr>
+                                        <tr>
+                                          <td><div align="center" class="Stile9"><span class="style61"><strong>Inter-Markets-Ex-Import-Group Procurement Services </strong>
+                                            by 
+                                            Inter-Brokers-Outsorcing-Export Import Managers Associates</span></div></td>
+                                        </tr>
+                                    </table></td>
+                                    <td><div align="center"><img src="http://www.interfreezone.org/db/sitoexporter/pages/img/LOGO MANNO BUILDING.jpg"></div></td>
+                                  </tr>
+                              </table></td>
+                            </tr>
+                          </table></td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#F8E8B0"><div align="center"><table width="100%" border="4">
+                              <tr>
+                                <td bgcolor="#000066"><div align="center"><span class="style49"><span class="style50">INTER-MARKETS IS PROUD TO INTRODUCE THE CERTIFIED EXPORTER INDICATED BELOW: </span><br>
+                                </span></div></td>
+                              </tr>
+                              <tr>
+                                <td><div align="center">
+                                  <table width="100%" border="0" cellpadding="8">
+                                    <tr>
+                                      <td>&nbsp;</td>
+                                      <td align="center"><table width="425" height="63" border="0" background="http://www.interfreezone.org/db/sitoexporter/img/freccia-company.gif">
+                                        <tr>
+                                          <td height="10" class="style47">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                          <td height="36"><div align="center" class="style18"><%=(Recordset1.GetColumnValue("Cli_C7"))%></div></td>
+                                        </tr>
+                                      </table></td>
+                                      <td>&nbsp;</td>
+                                    </tr>
+                                  </table>
+                                  </div></td>
+                              </tr>
+                            </table>
+                            
+                          </div></td>
+                        </tr>
+                        <tr>
+                          <td> <table width="100%" border="1" cellpadding="5" cellspacing="1" bordercolor="#333333" bgcolor="#333333">
+                            <tr bgcolor="#FFFFCC">
+                              <td colspan="2" bgcolor="#FFFF66" class="titolo"><p align="left" class="Stile8"><span class="style1"><a href="http://www.interfreezone.org/RESTRICTED" class="titolo"><strong><img src="http://www.interfreezone.org/webmarketing/IMG/ball.gif" width="14" height="14" border="0" /></strong></a>Apply for Special Inventory Special Stock: from Lot 1 to Lot 5 </span></p></td>
+                            </tr>
+                            <tr>
+                              <td height="100" align="center" valign="middle" bgcolor="#FFFFFF"><table width="100%"  border="8" cellpadding="5" cellspacing="5" bgcolor="#FFFFCC">
+                                <tr>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/5.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/5B.jpg" border="0"></a></div></td>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/6.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/6b.jpg" border="0"></a></div></td>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/7.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/7b.jpg" border="0"></a></div></td>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/8.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/8b.jpg" border="0"></a></div></td>
+                                </tr>
+                                <tr>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/9.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/9b.jpg" border="0"></a></div></td>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/10.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/10b.jpg" border="0"></a></div></td>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/11.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/11b.jpg" border="0"></a></div></td>
+                                  <td height="110"><div align="center"><a href="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/12.jpg" target="_blank"><img src="http://www.interfreezone.org/<%=(Recordset1.GetColumnValue("Cod_clie"))%>/flashing/catalogo/12b.jpg" border="0"></a></div></td>
+                                </tr>
+                              </table>
+                                <div align="left" class="style43">                                </div></td>
+                            >                            </tr>
+                          </table></td>
+                        </tr>
+                      </table>
+					  <div align="center">
+                      <BR>
+                      <BR></td>
+                </tr>
+				
+                <tr>
+                  <td bgcolor="#FFFF99" colspan="5"><div align="center"><font face="Arial, Helvetica, sans-serif" size="2" color="#000066"><b><font color="#FFFFFF" size="5"> </font></b></font>
+                    <table width="100%" border="4">
+                      <tr>
+                        <td align="center"><table width="100%"  border="5">
+                          <tr>
+                            <td><table width="100%"  border="1">
+                                <tr>
+                                  <td bgcolor="#000066" class="Stile98"><div align="center">F O R &nbsp;&nbsp;F U L L &nbsp;&nbsp;I N F O R M A T I O N&nbsp;&nbsp; and &nbsp;&nbsp;E N Q U I R I E S &nbsp;&nbsp;C L I C K &nbsp;&nbsp;B E L O W </div></td>
+                                </tr>
+                                <tr>
+                                  <td bgcolor="#FFFFCC"><table width="100%" border="0" cellspacing="5" bordercolor="#ECE9D8" bgcolor="#FFFFCC">
+                                      <tr>
+                                        <td width="50%" valign="middle"><table border="0" cellspacing="0">
+                                            <tr>
+                                              <td><a href="http://www.interfreezone.org/db/form/info-formUK.htm"><img src="http://www.interfreezone.org/db/sitoexporter/img/ball.gif" border="0"><img src="http://www.interfreezone.org/db/sitoexporter/img/british_flag.gif" border="0"></a></td>
+                                              <td><span class="Stile101">Click for more details </span></td>
+                                            </tr>
+                                        </table></td>
+                                        <td width="54%"><table border="0" cellspacing="5">
+                                            <tr>
+                                              <td><a href="http://www.interfreezone.org/db/form/info-formITA.htm"><img src="http://www.interfreezone.org/db/sitoexporter/img/ball.gif" border="0"><img src="http://www.interfreezone.org/db/sitoexporter/img/italian_flag.gif" border="0"></a></td>
+                                              <td><span class="Stile101">Per maggiori informazioni clicca qui</span></td>
+                                            </tr>
+                                        </table></td>
+                                      </tr>
+                                  </table></td>
+                                </tr>
+                            </table></td>
+                          </tr>
+                        </table>
+                          <BR>
+                          <table border="3" cellspacing="0">
+                            <tr>
+                              <td><div align="center"><img src="http://www.interfreezone.org/db/SITOEXPORTER/e u r o p a r k_file/piedone.jpg"></div></td>
+                            </tr>
+                          </table>
+                          <BR>
+                        <table width="100%"  border="3">
+                          <tr>
+                            <td bgcolor="#FFFFCC" class="Stile11"><table width="100%" border="0">
+                                <tr>
+                                  <td><div align="center"></div>
+                                      <div align="center"><span class="Stile10 Stile1"><b><span class="txxgree Stile8 Stile9"><span class="style18">ITALIAN DELEGATION &quot;IEMAS-Inter-Markets-Associates&quot;</span><font size="2"><span class="Stile131"><br />
+                                        </span></font></span></b></span><span class="style16"><b>Via Alassio, 10-20156-Milan Tel.Import's Desk 00393482626905 <br />
+                                          Tel 003902 36503719 Fax 003902 99982404 <br />
+                                          operating the &quot;INTER-MERCHANDISE-MARKETS &amp; TECHNOLOGY EXCHANGE&quot;</b></span></div></td>
+                                  <td><img src="http://www.interfreezone.org/webmarketing/IMG/CALL.jpg" width="100" height="67" /></td>
+                                </tr>
+                              </table>
+                                <table width="100%" border="0" cellspacing="10">
+                                  <tr>
+                                    <td><img src="http://www.interfreezone.org/webmarketing/IMG/MERCHANDISE.jpg" width="227" height="179" /></td>
+                                    <td valign="middle"><div align="left"><span class="style16">Divisione Operativa Autonoma dell'Inter-Markets-Export-Import-Consortiums-Associates-Network con Gestione delle Sale di Contrattazioni-Campionarie e Telematiche con Deposito Certificato di Autenticit&agrave; dei prodotti offerti in Export-Import &quot;Decertoffex&quot; collegate allea sostegno degli Incontri Bi-Settimanali tra Operatori nazionali-Esteri video-colle gati alle corrispondenti delegazioni in 27 paesi esteri della operanti presso i Magazzini Generali &quot;Self-Storage&quot; Inter-Porti-Zone-Franche-Centri Direzionali-Borse Mercantili Intrenazional</span><span class="Stile10 Stile1"><span class="Stile131">i</span></span></div>
+                                        <div align="left"><a href="http://www.interfreezone.org/webmarketing/PG/INTERN AFILIATION2.html"><img src="http://www.interfreezone.org/webmarketing/IMG/ball.gif" width="14" height="14" border="0" /><span class="style23">CLICK  TO VISIT THE IEMAS-INTER-MERCHANDISE MARKETS</span></a></div>
+                                      <div align="center"><span class="Stile10"><font face="Arial, Helvetica, sans-serif" size="2"><b><font face="Arial, Helvetica, sans-serif" size="2"><b><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#00CC33" size="5"><font face="Arial, Helvetica, sans-serif" size="2"><b><font face="Arial, Helvetica, sans-serif" size="2"><b><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#00CC33" size="5"><br>
+                                        • </font></b></font></b></font></b></font>FREE GREEN </font></b></font></b><font color="#00CC33"><b><font size="5">LINES NUMBER</font></b></font></font></b></font><font color="#00CC33" size="2" face="Arial, Helvetica, sans-serif"><b><b><font size="5"> • <br>
+                                          +39 3482626905 </font></b></b></font></span></div></td>
+                                  </tr>
+                              </table></td>
+                          </tr>
+                        </table>
+                          <br><table width="90%" border="1">
+                            <tr>
+                              <td bgcolor="#FFCCCC" class="Stile11"><div align="center" class="Stile52"> <font face="Arial, Helvetica, sans-serif"></font><font face="Arial, Helvetica, sans-serif">Televideoconference Nr.: 0039 3482626905</font></div></td>
+                            </tr>
+                            <tr>
+                              <td height="20" bgcolor="#FFFFCC" class="Stile11"><span class="Stile9"> <span class="style31">
+                                <marquee>
+                                <font face="Arial, Helvetica, sans-serif"><b>UK - Germany - ,Belgium - France - AMERICA: USA - Brazil - AFRICA: South Africa - ASIA: Japan - Hong Kong - Singapore - China - AUSTRALIA: North American Free Zone Central Distribution Center.</b></font>
+                                </marquee>
+                              </span> </span></td>
+                            </tr>
+                          </table>
+                          <p align="center" class="style37"><span class="Stile11"><span class="style38">INTER-FREE-ZONE-EXPORT &amp; IMPORT MARKETS ASSOCIATES</font></span> &nbsp;</span></span></span><b><br />
+                          </b><span class="style23">P.O.BOX 127&nbsp; - Pt. Via Besso, 5 -CH690 LUGANO 3 SWITZERLAND &nbsp;Tel.0041786283699 Fx.. 0041-0916046287</span><span class="style41"><a href="http://www.interfreezone.org/webmarketing/http://www.interfreezone.org"><br>
+                            </a></span><span class="style23"><a href="http://www.interfreezone.org/webmarketing/http://www.interfreezone.org">www.interfreezone.org</a> - e.mail <a href="http://www.interfreezone.org/webmarketing/mailto:info@interfreezone.org"> info@interfreezone.org</a></span></span></p>
+                          <table width="100%" border="5">
+                            <tr>
+                              <td><table width="100%" border="0" cellspacing="5">
+                                  <tr>
+                                    
+                                    <td><table width="100%" border="0" cellspacing="15">
+                                        <tr>
+                                          <td class="style10"><div align="center"><img src="HTTP://www.interfreezone.org/db/sitoexporter/img/SILOUETTE.jpg" width="550" height="22"></div></td>
+                                        </tr>
+                                        <tr>
+                                          <td class="style10"><div align="center"><img src="HTTP://www.interfreezone.org/db/sitoexporter/img/BANDIERE WEB ORIZZ.jpg" ></div></td>
+                                        </tr>
+                                        <tr>
+                                          <td class="style10"><div align="center"><img src="HTTP://www.interfreezone.org/db/sitoexporter/img/OROLOGI FUSO ORARIO.jpg"></div></td>
+                                        </tr>
+                                    </table></td>
+                                  </tr>
+                              </table></td>
+                            </tr>
+                          </table>                          <p>&nbsp;</p></td>
+                      </tr>
+                    </table>
+                    
+                          </div>
+                      <div align="center">
+                        <p class="Stile81 Stile99">Copyright&copy; Inter-Markets-Associates-Network-Swiss-Geneve-Lugano &amp; Milan-Italy</p>
+                    </div></td>
+                </tr>
+              </table></td>
+    </tr>
+  </table>
+</div>
+      </td>
+    </tr>
+    <tr bgcolor="#FFFF99"> 
+      <td></td>
+	  
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>
